@@ -7,8 +7,11 @@ The game must involve two people or parties whereby if the first party is playin
 ## Link to live site on GitHub pages:
 https://github.com/Maxwelnyadiero/Pig-Dice.git
 ## Behavior Driven Development:
-|behavior               |input           |output
-.................................................
+|behavior              |input      |output           |
+|:---------------------|:----------|:----------------|
+|                      |           |                 |
+|                      |           |                 |
+|                      |           |                 |
 ## Technology used:
 1. JavaScript
 2. CSS
