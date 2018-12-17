@@ -6,8 +6,8 @@ var opponents = function(name, score, status) {
 opponent.prototype.scoreplus = function() {
   this.score += grandtotal;
 }
-var firstOpponent();
-var secondOpponent();
+var player1();
+var player2();
 var throughDice = 0;
 var grandTotal = 0;
 var throughDice = function() {
@@ -21,16 +21,16 @@ var throughDice = function() {
   }
 }
 var turnOpponent = function() {
-  if (firstOpponent.status == "enable") {
-    firstOpponent.status = "disable";
-    secondOpponent.status = "enable";
+  if (player.status == "enable") {
+    player1.status = "disable";
+    player2.status = "enable";
     jQuery(".one-turn").show();
     jQuery(".two-turn").hide();
   } else if (secondOpponent.status == "enable") {
     firstOpponent.status = "enable";
     secondOpponent.status = "disable";
-    jQuery(".secondOpponent").show();
-    jQuery(".secondOpponent").hide();
+    jQuery(".player1").show();
+    jQuery(".player2").hide();
   }
 }
 var winner = function() {
@@ -43,10 +43,10 @@ var winner = function() {
     });
     jQuery("#throughDice").prop("disable", true);
     jQuery("#hold").prop("disable", true);
-  } else if (secondOpponent.score >= 100) {
-    jQuery(".dice-img").text("!!!" + secondOpponent.name + "  WINS !!!")
+  } else if (player2.score >= 100) {
+    jQuery(".dice-img").text("!!!" + player2.name + "  WINS !!!")
     swal({
-      title: secondOpponent.name + "  WINS !!!",
+      title: player2.name + "  WINS !!!",
       icon: "success",
       button: "OK!",
     });
@@ -58,19 +58,19 @@ var winner = function() {
 jQuery(document).ready(function() {
       jQuery(".opponnents").submit(function(event) {
             event.preventDefault();
-            firstOpponentName = $("#firstOpponent").val();
-            secondOpponentName = $("#secondOpponent").val();
-            secondOpponent = new opponnents(secondOpponentName, 0, "disable");
-            firstOpponent = new opponent(firstOpponentName, 0, "enable");
+            player1Name = $("#firstOpponent").val();
+            player2Name = $("#secondOpponent").val();
+            player2 = new player(secondOpponentName, 0, "disable");
+        player1  = new player(firstOpponentName, 0, "enable");
 
             jQuery(".login").hide();
             jQuery(".pig-dice").show();
-            jQuery(".firstOpponentname").prepend(firstOpponent.name);
-            jQuery(".secondOpponentname").prepend(secondOpponent.name);
+            jQuery(".player1name").prepend(player1.name);
+            jQuery(".player2name").prepend(player2.name);
             jQuery(".two-turn").show();
             jQuery(".one-turn").hide();
 
-            jQuery("#roll").click(function() {
-              roll();
+            jQuery("#grandtotal").click(function() {
+              grandtotal();
               jQuery("#grandTotal").text(grandTotal);
             })
