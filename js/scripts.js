@@ -35,7 +35,7 @@ var turnOpponent = function() {
 }
 var winner = function() {
   if (playerOne.score >= 100) {
-    jQuery(".dice-img").text("!!!" + firstOpponent.name + "  WINS !!!")
+    jQuery(".pig dice-img").text("!!!" + firstOpponent.name + "  WINS !!!")
     swal({
       title: firstOpponent.name + "  WINS !!!",
       icon: "success",
@@ -58,10 +58,10 @@ var winner = function() {
 jQuery(document).ready(function() {
       jQuery(".opponnents").submit(function(event) {
             event.preventDefault();
-            firstOpponentName = $("#player-one").val();
-            secondOpponentName = $("#player-two").val();
-            secondOpponent = new Player(secondOpponentName, 0, "disable");
-            firstOpponent = new Player(firstOpponentName, 0, "enable");
+            firstOpponentName = $("#firstOpponent").val();
+            secondOpponentName = $("#secondOpponent").val();
+            secondOpponent = new opponnents(secondOpponentName, 0, "disable");
+            firstOpponent = new opponent(firstOpponentName, 0, "enable");
 
             jQuery(".login").hide();
             jQuery(".pig-dice").show();
