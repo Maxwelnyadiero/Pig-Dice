@@ -1,4 +1,4 @@
-var Opponent = function(name, score, status) {
+var opponents = function(name, score, status) {
   this.name = name;
   this.score = score;
   this.status = status;
@@ -6,14 +6,14 @@ var Opponent = function(name, score, status) {
 opponent.prototype.scoreplus = function() {
   this.score += grandtotal;
 }
-var firstopponent();
-var secondopponent();
-var roll = 0;
+var firstOpponent();
+var secondOpponent();
+var throughDice = 0;
 var grandTotal = 0;
-var roll = function() {
-  roll = math.floor(math.random() * 6) + 1;
+var throughDice = function() {
+  through dice = math.floor(math.random() * 6) + 1;
   jQuery("#new-dice").remove();
-  if (roll != 1) {
+  if (through dice != 1) {
     grandTotal += roll
   } else {
     grandTotal = 0;
@@ -41,7 +41,7 @@ var winner = function() {
       icon: "success",
       button: "OK!",
     });
-    jQuery("#roll").prop("disable", true);
+    jQuery("#throughDice").prop("disable", true);
     jQuery("#hold").prop("disable", true);
   } else if (secondOpponent.score >= 100) {
     jQuery(".dice-img").text("!!!" + secondOpponent.name + "  WINS !!!")
@@ -50,7 +50,7 @@ var winner = function() {
       icon: "success",
       button: "OK!",
     });
-    jQuery("#roll").prop("disabled", true);
+    jQuery("#throughDice").prop("disabled", true);
     jQuery("#hold").prop("disabled", true);
   }
 }
