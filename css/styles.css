@@ -14,3 +14,8 @@ p{
   font-family: monospace;
   margin: auto;
 }
+h2{
+  color: orange;
+  font-size: 15px;
+  padding: 15px;
+}
