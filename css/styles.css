@@ -22,3 +22,6 @@ h2{
 body{
   background-color: inherit;
 }
+.player1 > player2{
+  float: right;
+}
